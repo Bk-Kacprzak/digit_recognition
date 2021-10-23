@@ -44,7 +44,7 @@ void Network::activate() {
 void Network::estimateCost(int realAnswer) {
     answerCost = 0.0f;
     int networkAnswerIndex = 0;
-    Layer const * outputLayer = layers[layersCount - 1];
+    Layer *&outputLayer = layers[layersCount - 1];
     for (int i = 0; i < outputLayerNeuronCount; i++)
     {
         if (outputLayer->getActivation(networkAnswerIndex) < outputLayer->getActivation(i))
